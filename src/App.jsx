@@ -13,12 +13,25 @@
  * Review challenge: do all the CSS yourself based on the design
  * linked in the slides.
  */
+import React from "react"
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes } from "react-router-dom";
+import Home from".Pages/Home"
+import About from ".pages/About"
 
 function App() {
 
   return (
-    <h1>Start here</h1>
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/about" element={<About />}/>
+        </Routes>
+      </BrowserRouter>
   )
 }
+ReactDOM
+.createRoot(document.getElementById('root'))
+.render(<App/>);
 
 export default App
